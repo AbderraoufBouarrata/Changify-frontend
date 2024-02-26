@@ -19,6 +19,7 @@ import Typography from "@/app/_components/Typography";
 import useBuildQuery from "@/app/_hooks/useBuildQuery";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/_redux/store";
+import CodeBlock from "@/app/_components/CodeBlock";
 export default function LinkCard() {
     const [isCopied, setIsCopied] = useState<boolean>(false);
     const handleCopy = () => {
@@ -40,19 +41,7 @@ export default function LinkCard() {
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <pre className="red rounded- flex h-16 items-center justify-between bg-slate-100 p-4 dark:bg-slate-800">
-                    {url}
-                    <Popover>
-                        <PopoverTrigger asChild>
-                            <div className="cursor-pointer rounded-lg bg-white p-2 dark:bg-zinc-800">
-                                <Copy />
-                            </div>
-                        </PopoverTrigger>
-                        <PopoverContent className=" border-none bg-white dark:bg-zinc-800">
-                            <Typography variant="p1">Text Copied</Typography>
-                        </PopoverContent>
-                    </Popover>
-                </pre>
+                <CodeBlock>{url}</CodeBlock>
             </CardContent>
             <CardFooter>
                 <a href={url} target="_blank">

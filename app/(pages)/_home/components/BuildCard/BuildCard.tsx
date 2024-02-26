@@ -1,25 +1,20 @@
 "use client";
-import React from "react";
+import useBuildQuery from "@/app/_hooks/useBuildQuery";
+import { RootState } from "@/app/_redux/store";
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import { useTheme } from "next-themes";
+import { useSelector } from "react-redux";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
-    atomDark,
-    oneLight,
     dracula,
+    oneLight,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import { RotateCcw } from "lucide-react";
-import useBuildQuery from "@/app/_hooks/useBuildQuery";
-import { useSelector } from "react-redux";
-import { RootState } from "@/app/_redux/store";
 
 export default function BuildCard() {
     const jsonData = { currency: "USD" };
