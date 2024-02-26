@@ -101,16 +101,18 @@ export default function ConvertCard() {
                 </div>
             </CardContent>
             <CardFooter>
-                <Button
-                    variant="default"
-                    onClick={async () => {
-                        const shouldShow = await fetchData();
-                        console.log(shouldShow);
-                        if (shouldShow) setIsVisible(true);
-                    }}
-                >
-                    Convert
-                </Button>
+                {!isVisible && (
+                    <Button
+                        variant="default"
+                        onClick={async () => {
+                            const shouldShow = await fetchData();
+                            console.log(shouldShow);
+                            if (shouldShow) setIsVisible(true);
+                        }}
+                    >
+                        Convert
+                    </Button>
+                )}
             </CardFooter>
         </Card>
     );

@@ -46,10 +46,10 @@ export default function BuildCard() {
                     {body}
                 </SyntaxHighlighter>
             </CardContent>
-
+            {/* 
             <CardFooter>
-                <Button variant="default">Try it out!</Button>
-            </CardFooter>
+                <Button variant="default"></Button>
+            </CardFooter> */}
         </Card>
     );
 }

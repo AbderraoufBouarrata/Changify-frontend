@@ -10,8 +10,8 @@ type currencyType = {
 
 const initialState: currencyType = {
     amount: 0,
-    fromCurrency: "",
-    toCurrency: "",
+    fromCurrency: "eureuro",
+    toCurrency: "usdunited states dollar",
     result: 0,
 };
 

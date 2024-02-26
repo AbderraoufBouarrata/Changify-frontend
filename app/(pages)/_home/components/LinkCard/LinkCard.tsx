@@ -55,7 +55,10 @@ export default function LinkCard() {
                 </pre>
             </CardContent>
             <CardFooter>
-                <Button variant="default">Try it out!</Button>
+                <a href={url} target="_blank">
+                    {" "}
+                    <Button variant="default">Try it out!</Button>
+                </a>
             </CardFooter>
         </Card>
     );
