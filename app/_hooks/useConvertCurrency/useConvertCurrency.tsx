@@ -15,7 +15,6 @@ export default function useConvertCurrency() {
 
     const fetchData = async () => {
         if (!(fromCurrency && toCurrency && amount)) {
-            console.log("no data");
             return false;
         }
 
@@ -31,6 +30,7 @@ export default function useConvertCurrency() {
             return true;
         } catch (error) {
             console.error("Error:", error);
+            throw error;
         }
     };
 

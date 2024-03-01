@@ -26,14 +26,14 @@ export default function NavBar() {
         },
     ];
     return (
-        <div className="flex items-center justify-between py-4 h-24">
+        <div className="flex h-24 items-center justify-between py-4">
             <div className="flex items-center gap-4">
                 <Logo />
                 <Typography variant="h3">Changify</Typography>
             </div>
             {isDesktop && (
                 <nav>
-                    <ul className="flex items-center lg:gap-24 gap-12">
+                    <ul className="flex items-center gap-12 lg:gap-24">
                         {navLinks.map(({ name, link }) => (
                             <li key={name}>
                                 <a href={link}>{name}</a>
@@ -55,7 +55,7 @@ export default function NavBar() {
                     <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 </Button>
                 {isDesktop ? (
-                    <a href="/docs" target="_blank">
+                    <a href="/documentation" target="_blank">
                         <Button
                             variant="default"
                             className="flex items-center gap-4"
@@ -79,13 +79,13 @@ export default function NavBar() {
                                 </ul>
                             </nav>
                             <a
-                                href="/docs"
+                                href="/documentation"
                                 target="_blank w-full"
                                 className="mt-8"
                             >
                                 <Button
                                     variant="default"
-                                    className="flex items-center gap-4 w-full"
+                                    className="flex w-full items-center gap-4"
                                 >
                                     Go to Docs{" "}
                                     <ChevronRight className="h-4 w-4" />

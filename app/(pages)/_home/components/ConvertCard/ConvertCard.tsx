@@ -1,7 +1,12 @@
 "use client";
 import Currencies from "@/app/_assets/json/currencies-with-flags.json";
 import ComboBox from "@/app/_components/ComboBox";
-import { ArrowLeftRight } from "lucide-react";
+import Typography from "@/app/_components/Typography";
+import useBuildQuery from "@/app/_hooks/useBuildQuery";
+import useConvertCurrency from "@/app/_hooks/useConvertCurrency";
+import { setAmount, swapCurrencies } from "@/app/_redux/currency";
+import { RootState } from "@/app/_redux/store";
+import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -10,16 +15,11 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Typography from "@/app/_components/Typography";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeftRight } from "lucide-react";
 import { useState } from "react";
-import { setAmount, swapCurrencies } from "@/app/_redux/currency";
 import { useDispatch, useSelector } from "react-redux";
-import useBuildQuery from "@/app/_hooks/useBuildQuery";
-import useConvertCurrency from "@/app/_hooks/useConvertCurrency";
-import { RootState } from "@/app/_redux/store";
 
 export default function ConvertCard() {
     const [isVisible, setIsVisible] = useState(false);
@@ -91,8 +91,8 @@ export default function ConvertCard() {
                                 )} ${fromCurrency.slice(0, 3).toUpperCase()}`}</Typography>
                                 <Typography variant="h3">
                                     {`${result.toLocaleString("en-US", {
-                                        maximumFractionDigits: 2,
-                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 6,
+                                        minimumFractionDigits: 6,
                                     })} ${toCurrency.slice(0, 3).toUpperCase()}`}
                                 </Typography>
                             </motion.div>

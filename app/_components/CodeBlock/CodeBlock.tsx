@@ -12,7 +12,7 @@ export default function CodeBlock({ children }: { children: string }) {
         navigator.clipboard.writeText(children);
     };
     return (
-        <pre className="red rounded- flex h-16 items-center justify-between bg-slate-100 p-4 dark:bg-slate-800">
+        <pre className="red rounded- flex h-16 items-center justify-between bg-slate-100 p-4 dark:bg-gray-700">
             {children}
             <Popover>
                 <PopoverTrigger asChild>

@@ -17,10 +17,9 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function BuildCard() {
-    const jsonData = { currency: "USD" };
+    useBuildQuery();
     const { theme } = useTheme();
     const { url, body } = useSelector((state: RootState) => state.query);
-    useBuildQuery();
     return (
         <Card className="h-full">
             <CardHeader>
