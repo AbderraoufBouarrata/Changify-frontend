@@ -26,7 +26,7 @@ export default function LinkCard() {
         setIsCopied(true);
         navigator.clipboard.writeText(url);
     };
-    useBuildQuery();
+
     const { url } = useSelector((state: RootState) => state.query);
     return (
         <Card>
@@ -34,7 +34,11 @@ export default function LinkCard() {
                 <CardTitle>API URL</CardTitle>
                 <CardDescription>
                     <strong>GET</strong>{" "}
-                    <a className="font-semibold text-green-400 underline">
+                    <a
+                        href="/documentation"
+                        target="_blank"
+                        className="font-semibold text-green-400 underline"
+                    >
                         API
                     </a>{" "}
                     URL request:

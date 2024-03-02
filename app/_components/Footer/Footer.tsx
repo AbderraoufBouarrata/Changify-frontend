@@ -40,8 +40,8 @@ export default function Footer() {
                         <a href="/plans" target="_blank">
                             <li>Plans</li>
                         </a>
-                        <a href="/terms-of-usage" target="_blank">
-                            <li>Terms of usage</li>
+                        <a href="/terms-of-service" target="_blank">
+                            <li>Terms of service</li>
                         </a>
                         <a href="/privacy-policy" target="_blank">
                             <li>Privacy Policy</li>

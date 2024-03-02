@@ -12,10 +12,10 @@ import { ErrorBoundary } from "react-error-boundary";
 
 export function CardFallback({ error, resetErrorBoundary }: any) {
     return (
-        <Card className="h-full">
-            <pre className="red bg-slate-100 h-full dark:bg-slate-800">
+        <Card className="h-full max-w-16">
+            <pre className="red h-full bg-slate-100 dark:bg-slate-800">
                 <CardHeader>Component Failed to load with error:</CardHeader>
-                <CardContent>{error.message}</CardContent>
+                <CardContent className="max-w-16">{error.message}</CardContent>
                 <CardFooter>
                     <Button variant="destructive" onClick={resetErrorBoundary}>
                         Reload page

@@ -2,6 +2,7 @@
 import CustomAccordion from "@/app/_components/Accordion/Accordion";
 import CodeBlock from "@/app/_components/CodeBlock";
 import Typography from "@/app/_components/Typography";
+import useBuildQuery from "@/app/_hooks/useBuildQuery";
 import { useTheme } from "next-themes";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
@@ -10,6 +11,8 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 export default function page() {
     const { theme } = useTheme();
+    const api = process.env.NEXT_PUBLIC_API_URL as string;
+    useBuildQuery();
     return (
         <div className="grid gap-4">
             <Typography variant="h2" className="mt-8">
@@ -22,9 +25,7 @@ export default function page() {
                 <Typography variant="p1">
                     use this URL to access our api in all endpoints
                 </Typography>
-                <CodeBlock>
-                    {process.env.NEXT_PUBLIC_API_URL as string}
-                </CodeBlock>
+                <CodeBlock>{api}</CodeBlock>
             </CustomAccordion>
             <CustomAccordion title="Get all currencies">
                 <Typography variant="p1">

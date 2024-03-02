@@ -28,7 +28,7 @@ export default function ConvertCard() {
     );
     const values = Currencies;
     const dispatch = useDispatch();
-    useBuildQuery();
+
     const { fetchData } = useConvertCurrency();
     return (
         <Card className="h-full">
@@ -38,13 +38,13 @@ export default function ConvertCard() {
             </CardHeader>
             <CardContent>
                 <div className="flex flex-col items-start gap-4 xl:flex-row xl:items-center xl:justify-between">
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col items-center justify-start gap-4 md:flex-row">
                         <div>
                             <Typography variant="h5">Amount:</Typography>
                             <Input
                                 type="number"
                                 placeholder="Amount"
-                                className="w-32"
+                                className="w-full md:w-32"
                                 onChange={(e: any) => {
                                     dispatch(setAmount(e.target.value));
                                 }}
@@ -55,7 +55,7 @@ export default function ConvertCard() {
                             <ComboBox values={values} mode="from" />
                         </div>
                     </div>
-                    <div>
+                    <div className="flex w-full justify-center md:w-fit md:justify-start">
                         <Button
                             variant="default"
                             className="mt-5 h-10 w-10 rounded-full border-zinc-200 p-3 text-zinc-950 shadow-sm dark:border-zinc-800 dark:text-zinc-50"

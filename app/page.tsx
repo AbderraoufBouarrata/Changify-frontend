@@ -32,7 +32,6 @@ export default function Home() {
                 <CardErrorBoudary>
                     <Suspense fallback={<Loading />}>
                         <BuildCard />
-                        {/* TODO: fix this hydration error */}
                     </Suspense>
                 </CardErrorBoudary>
             </div>
@@ -44,7 +43,11 @@ export default function Home() {
                 </CardErrorBoudary>
             </div>
             <div className="col-span-3">
-                <DetectCountry />
+                <CardErrorBoudary>
+                    <Suspense fallback={<Loading />}>
+                        <DetectCountry />
+                    </Suspense>
+                </CardErrorBoudary>
             </div>
         </div>
     );

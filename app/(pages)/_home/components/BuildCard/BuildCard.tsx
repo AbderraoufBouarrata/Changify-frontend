@@ -26,7 +26,11 @@ export default function BuildCard() {
                 <CardTitle>Query Builder</CardTitle>
                 <CardDescription>
                     <strong>POST</strong>{" "}
-                    <a className="font-semibold text-green-400 underline">
+                    <a
+                        href="/documentation"
+                        target="_blank"
+                        className="font-semibold text-green-400 underline"
+                    >
                         API
                     </a>{" "}
                     request body:

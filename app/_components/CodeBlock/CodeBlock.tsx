@@ -12,7 +12,10 @@ export default function CodeBlock({ children }: { children: string }) {
         navigator.clipboard.writeText(children);
     };
     return (
-        <pre className="red rounded- flex h-16 items-center justify-between bg-slate-100 p-4 dark:bg-gray-700">
+        <pre
+            className="red rounded- flex h-16 max-w-full items-center justify-between overflow-x-auto overflow-y-hidden bg-slate-100 p-4 dark:bg-gray-700"
+            style={{ overflowWrap: "break-word", textWrap: "wrap" }}
+        >
             {children}
             <Popover>
                 <PopoverTrigger asChild>
